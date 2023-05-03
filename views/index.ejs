@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO</title>
+    <!-- CSS file -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/4912f2ec42.js" crossorigin="anonymous"></script> 
+</head>
+<body>
+    <div class="title-box">
+        <h1>TODO List</h1>
+        <p><%= todayString %></p>
+    </div>
+    
+
+        <div class="container">
+            <ul style="list-style: none;">
+                <% for(let i = 0; i < items.length; i++) { %>
+                    <div class="item">
+                        <input type="checkbox">
+                        <li><%= items[i] %></li>
+                    </div>
+                    
+                <% } %>
+            </ul>
+    
+            <form class="item" action="/" method="POST">
+                    <input type="text" name="itemInput" placeholder="Add Task" autocomplete="off">
+                    <button type="submit" name="addButton" value="deneme">+</button>
+            </form>
+        </div>
+</body>
+<footer>
+    <a href="https://github.com/barangokcekli/secimekalansure"><i class="fa-brands fa-github fa-xl"></i></a>
+    <p><i class="fa-regular fa-copyright"></i> <%= year %></p>
+</footer>
+</html>
